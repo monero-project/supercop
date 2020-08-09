@@ -35,6 +35,7 @@ if (${MONERO_CRYPTO_LIBRARY} STREQUAL "auto")
   if (NOT DEFINED BEST)
     message(FATAL_ERROR "No crypto library available for target platform")
   endif ()
+  message("Using ${BEST} crypto backend")
   set(MONERO_CRYPTO_LIBRARY ${BEST})
 endif ()
 
