@@ -1,3 +1,9 @@
+#ifdef __APPLE__
+  #define MONERO_LOCAL_SYMBOL(x) .private_extern x
+#else
+  #define MONERO_LOCAL_SYMBOL(x) .hidden x
+#endif
+
 .data
 
 .globl crypto_sign_ed25519_amd64_64_121666
@@ -15,6 +21,22 @@
 .globl crypto_sign_ed25519_amd64_64_EC2D2
 .globl crypto_sign_ed25519_amd64_64_EC2D3
 .globl crypto_sign_ed25519_amd64_64_38
+
+MONERO_LOCAL_SYMBOL(crypto_sign_ed25519_amd64_64_121666)
+MONERO_LOCAL_SYMBOL(crypto_sign_ed25519_amd64_64_MU0)
+MONERO_LOCAL_SYMBOL(crypto_sign_ed25519_amd64_64_MU1)
+MONERO_LOCAL_SYMBOL(crypto_sign_ed25519_amd64_64_MU2)
+MONERO_LOCAL_SYMBOL(crypto_sign_ed25519_amd64_64_MU3)
+MONERO_LOCAL_SYMBOL(crypto_sign_ed25519_amd64_64_MU4)
+MONERO_LOCAL_SYMBOL(crypto_sign_ed25519_amd64_64_ORDER0)
+MONERO_LOCAL_SYMBOL(crypto_sign_ed25519_amd64_64_ORDER1)
+MONERO_LOCAL_SYMBOL(crypto_sign_ed25519_amd64_64_ORDER2)
+MONERO_LOCAL_SYMBOL(crypto_sign_ed25519_amd64_64_ORDER3)
+MONERO_LOCAL_SYMBOL(crypto_sign_ed25519_amd64_64_EC2D0)
+MONERO_LOCAL_SYMBOL(crypto_sign_ed25519_amd64_64_EC2D1)
+MONERO_LOCAL_SYMBOL(crypto_sign_ed25519_amd64_64_EC2D2)
+MONERO_LOCAL_SYMBOL(crypto_sign_ed25519_amd64_64_EC2D3)
+MONERO_LOCAL_SYMBOL(crypto_sign_ed25519_amd64_64_38)
 
 .p2align 4
 
