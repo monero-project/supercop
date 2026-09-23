@@ -60,7 +60,7 @@ function(add_amd64_library LIBNAME LIBFOLDER)
     "${LIBFOLDER}/sc25519_from32bytes.c"
     "${LIBFOLDER}/sc25519_window4.c"
     ${AMD64_PERF_SOURCES})
-  target_include_directories("monero-crypto-${LIBNAME}" PRIVATE ${LIBFOLDER})
+  target_include_directories("monero-crypto-${LIBNAME}" INTERFACE "${PROJECT_SOURCE_DIR}/include" PRIVATE ${LIBFOLDER})
   set_source_files_properties("${LIBFOLDER}/consts.s" PROPERTIES COMPILE_FLAGS "-x assembler-with-cpp" LANGUAGE "C")
 endfunction (add_amd64_library)
 
